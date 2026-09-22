@@ -36,3 +36,9 @@ The primary branch is master. The origin remote is git@github.com:Orivyx/elevart
 Dependencies, builds, references, discarded media, working artifacts, and environment files are excluded through .gitignore.
 
 Before deploying to the final domain, update canonical and og:url in index.html. Vite publishes the active contents of public and dependencies imported by the application.
+
+## Vercel
+
+vercel.json configures the Vite framework, npm ci, npm run build, and the dist output directory. .vercelignore excludes local references, discarded media, artifacts, and historical scripts from CLI uploads.
+
+Authenticate with npx vercel login, link the project to the intended account, and deploy with npx vercel --prod. The local .vercel directory is excluded from Git. Use master as the production branch when connecting the GitHub repository.

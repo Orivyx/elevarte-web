@@ -1,0 +1,13 @@
+.git/
+.openai/
+.vercel/
+node_modules/
+dist/
+refs/
+descarte/
+artifacts/
+scripts/
+docs/
+.env*
+*.log
+*.tsbuildinfo
