@@ -1,0 +1,127 @@
+{
+  "nav": [
+    "Projects",
+    "Studio",
+    "Services",
+    "Contact"
+  ],
+  "hero": [
+    "BRANDS THAT",
+    "ELEVATE"
+  ],
+  "explore": "SCROLL TO EXPLORE",
+  "studio": "INDEPENDENT DESIGN STUDIO",
+  "project": "SELECTED PROJECTS",
+  "disciplines": [
+    "BRAND IDENTITY",
+    "ART DIRECTION",
+    "DIGITAL EXPERIENCE"
+  ],
+  "statement": [
+    "DESIGN SHIFTS",
+    "PERCEPTION."
+  ],
+  "about": "We turn essence into presence. Connecting strategy, identity and experience to build meaningful brands.",
+  "services": [
+    "IDENTITY",
+    "STRATEGY",
+    "DIGITAL",
+    "ART DIRECTION",
+    "POSITIONING"
+  ],
+  "contact": [
+    "LET’S ELEVATE",
+    "YOUR BRAND."
+  ],
+  "start": "START A PROJECT",
+  "back": "BACK TO TOP",
+  "common": {
+    "home": "Elevarte — home",
+    "skip": "Skip to content",
+    "main": "Main",
+    "language": "Language",
+    "mobileMenu": "Mobile menu",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "brandIdentity": "BRAND IDENTITY",
+    "artDirection": "ART DIRECTION"
+  },
+  "cinema": {
+    "label": "Elevarte — project exhibition",
+    "kicker": "Strategy to go further.\nDesign to be remembered.",
+    "explore": "EXPLORE PROJECTS",
+    "selected": "SELECTED WORK",
+    "study": "IDENTITY STUDY",
+    "visualStudy": "VISUAL STUDY",
+    "end": "DESIGN SHIFTS PERCEPTION",
+    "index": "Project index",
+    "concept": "CONCEPT MOCKUPS · VISUAL DIRECTION BY ELEVARTE"
+  },
+  "caseStudies": [
+    {
+      "sector": "Vehicle documentation",
+      "direction": "Designed to move forward.",
+      "description": "A strong presence. A direct identity. A brand designed to inspire confidence.",
+      "coverAlt": "Original Nogueira Despachante business card mockup",
+      "detailAlt": "Original black mug mockup with the Nogueira Despachante brand",
+      "colophon": "BLACK / RED / MOVEMENT"
+    },
+    {
+      "sector": "Attorneys",
+      "direction": "The strength of clarity.",
+      "description": "Precision in every choice. An identity expressing clarity and trust.",
+      "coverAlt": "AOL Advogados stationery on architectural volumes",
+      "detailAlt": "",
+      "colophon": "FORM / CONTRAST / BALANCE"
+    },
+    {
+      "sector": "Aesthetic pharmacist",
+      "direction": "Care takes shape.",
+      "description": "Sensitivity and precision. An identity designed around care.",
+      "coverAlt": "Original Dr. Tatiana Sanchez cosmetic mockup on pink fabric",
+      "detailAlt": "Original Dr. Tatiana Sanchez business card mockup",
+      "colophon": "TEXTURE / DELICACY / CARE"
+    }
+  ],
+  "serviceDescriptions": [
+    "What makes your brand unmistakable.",
+    "A point of view. A direction.",
+    "Experiences that connect.",
+    "A vision behind every choice.",
+    "Your own place in the world."
+  ],
+  "film": {
+    "label": "Dra. Tatiana Sanchez identity — scroll-controlled film",
+    "caption": "DRA. TATIANA SANCHEZ · IDENTITY IN MOTION"
+  },
+  "form": {
+    "intro": "Tell us what you have in mind. Let's build the next step for your brand.",
+    "name": "Your name *",
+    "namePlaceholder": "What should we call you?",
+    "email": "Email *",
+    "emailPlaceholder": "you@company.com",
+    "brand": "Brand or company",
+    "brandPlaceholder": "Your brand name, if you have one",
+    "project": "About your project *",
+    "projectPlaceholder": "What does your brand need? Tell us about your goals and what you'd like to create.",
+    "note": "* Required fields. WhatsApp will open with your message ready for you to send.",
+    "submit": "CONTINUE ON WHATSAPP",
+    "message": "Hello, Elevarte! I'd like to discuss a project.\n\nName: {{name}}\nEmail: {{email}}\nBrand: {{brand}}\n\n{{project}}"
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title": "In their own words.",
+    "preview": "Fictional copy for layout review. These are not client testimonials.",
+    "namePlaceholder": "Example client",
+    "rolePlaceholder": "Fictional testimonial",
+    "examples": [
+      "Elevarte captured what we wanted to communicate. Our brand now has a clear identity, and we are proud to present it in every detail.",
+      "The process brought clarity from the start. Every choice made sense for our business, and the result felt consistent across all our materials."
+    ],
+    "carousel": "carousel",
+    "previous": "Previous",
+    "next": "Next",
+    "pause": "Pause",
+    "play": "Resume"
+  }
+}

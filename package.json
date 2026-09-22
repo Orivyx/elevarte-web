@@ -1,0 +1,39 @@
+{
+  "name": "elevarte",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:visual": "node scripts/qa-cinema.mjs",
+    "format": "prettier --write src",
+    "test:i18n": "node scripts/qa-i18n.mjs",
+    "test:responsive": "node scripts/qa-wide.mjs"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.3.0",
+    "gsap": "^3.13.0",
+    "i18next": "^26.4.2",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "ogl": "^1.0.11",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-i18next": "^17.0.15",
+    "swiper": "^14.2.0"
+  },
+  "devDependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@playwright/test": "^1.55.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^4.7.0",
+    "prettier": "^3.9.6",
+    "sharp": "^0.35.4",
+    "tailwindcss": "^4.1.12",
+    "typescript": "~5.9.2",
+    "vite": "^6.3.5"
+  }
+}

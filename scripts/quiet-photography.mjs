@@ -1,0 +1,51 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=p=>readFileSync(p,'utf8').replaceAll('\r\n','\n');
+let s=read('src/sections/Cinema.tsx');
+s=s.replace('import { DepthMedia } from "../components/DepthMedia";\n','');
+s=s.replace(/\s*<DepthMedia src=\{projects\[\d\]\.cover\} \/>/g,'');
+s=s.replace(/\s*<div className="c-n-companion"[^\n]*\n/g,'\n');
+s=s.replace(/\s*<div className="c-t-satellite"[^\n]*\n/g,'\n');
+s=s.replace(/\s*<div className="c-n-system">[\s\S]*?<\/div>/,'');
+s=s.replace('data-design-version="editorial-metal-01"','data-design-version="quiet-photography-02"');
+writeFileSync('src/sections/Cinema.tsx',s);
+s=read('src/animations/useCinema.ts');
+s=s.replace(/      gsap\.set\(q\("\.c-n-cover \.media-strip"\), \{[\s\S]*?\n      \}\);\n/,'');
+s=s.replace(/^.*gsap\.set\(q\("\.(?:c-n-companion|c-t-satellite|c-n-system|c-t-cover \.media-strip)"\).*\n/gm,'');
+s=s.replace(/gsap\.set\(q\("\.c-n-cover"\),[^\n]+/,'gsap.set(q(".c-n-cover"), { autoAlpha: 0, clipPath: "inset(36% 14% 36% 14%)" });');
+s=s.replace(/gsap\.set\(q\("\.c-t-cover"\),[^\n]+/,'gsap.set(q(".c-t-cover"), { xPercent: 0, yPercent: 0, scale: 1 });');
+s=s.replace(/gsap\.set\(q\("\.c-aol-image"\),[^\n]+/,'gsap.set(q(".c-aol-image"), { xPercent: 0, yPercent: 0, scale: 1 });');
+s=s.replace('clipPath: "inset(0% 0% 0% 100%)"','clipPath: "inset(100% 0% 0% 0%)"');
+s=s.replace('clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)"','clipPath: "inset(100% 0% 0% 0%)"');
+s=s.replace('clipPath: "circle(0% at 72% 100%)"','clipPath: "inset(100% 0% 0% 0%)"');
+s=s.replace('gsap.set(q(".c-t-detail"), { clipPath: "inset(50% 0% 50% 0%)" });','gsap.set(q(".c-t-detail"), { clipPath: "inset(100% 0% 0% 0%)" });');
+s=s.replace('clipPath: "inset(49.9% 0% 49.9% 0%)"','clipPath: "inset(100% 0% 0% 0%)"');
+// Remove image motion rather than neutralizing it with competing CSS transforms.
+for(const selector of ['c-n-cover .media-strip','c-t-cover .media-strip','c-n-companion','c-t-satellite','c-n-cover','c-t-cover','c-aol-image','c-n-system']) {
+ const escaped=selector.replaceAll('.','\\.');
+ const expression=new RegExp('\\n\\s*\\.to\\(q\\("\\.'+escaped+'"\\),[\\s\\S]*?\\}, [\\d.]+\\)','g');
+ s=s.replace(expression,'');
+}
+s=s.replace(/^.*\.fromTo\(q\("\.c-(?:n|t)-detail img"\).*\n/gm,'');
+s=s.replace(/^.*\.to\(q\("\.c-n-detail"\), \{ xPercent:[^\n]*\n/gm,'');
+s=s.replace(/^.*\.to\(q\("\.c-aol"\), \{ yPercent:[^\n]*\n/gm,'');
+s=s.replace('.set(q(".c-n-cover"), { autoAlpha: 1 }, 1.9)', '.set(q(".c-n-cover"), { autoAlpha: 1 }, 2.5)\n        .to(q(".c-n-cover"), { clipPath: "inset(0% 0% 0% 0%)", duration: 1.7, ease: "none" }, 2.5)');
+s=s.replace('clipPath: "polygon(-30% 0%, 100% 0%, 100% 100%, 0% 100%)"','clipPath: "inset(0% 0% 0% 0%)"');
+s=s.replace('clipPath: "circle(150% at 72% 100%)"','clipPath: "inset(0% 0% 0% 0%)"');
+// The removed pattern was the end of this chain.
+s=s.replace('.fromTo(q(".c-chapter-track i"), { scaleX: 0 }, { scaleX: 1, duration: 4.8 }, 6)','.fromTo(q(".c-chapter-track i"), { scaleX: 0 }, { scaleX: 1, duration: 4.8 }, 6);');
+s=s.replace('// Camera passes through the letters; the three image planes converge behind them.','// Preserve the hero, then open one fixed photographic frame.');
+s=s.replace('// A diagonal architectural plane replaces the image, then the typography assembles.','// The next complete composition replaces the previous frame on the same axis.');
+s=s.replace("// A circular opening leads to a floating still-life, then to the film's aperture.","// Intact stills lead into the scroll-controlled film.");
+writeFileSync('src/animations/useCinema.ts',s);
+s=read('src/sections/Studio.tsx');
+const start=s.indexOf('        tl.fromTo(".studio-fragment.one"');
+const stop=s.indexOf('.fromTo(".studio-statement >',start);
+s=s.slice(0,start)+'        tl'+s.slice(stop);
+s=s.replace(/\s*\.to\("\.studio-fragment\.(?:one|two)",[\s\S]*?\}, 1\.3\)/g,'');
+s=s.replace(/\s*<img\s+className="studio-fragment (?:one|two)"[\s\S]*?\/>/g,'');
+writeFileSync('src/sections/Studio.tsx',s);
+s=read('src/sections/Services.tsx');
+s=s.replace('          const image = scene.querySelector("img");\n','');
+s=s.replace(/\s*\.to\(scenes\[i - 1\]\.querySelector\("img"\), \{[\s\S]*?\}, at - 0\.8\)/,'');
+s=s.replace(/\)\.fromTo\(image,[\s\S]*?Math\.max\(0, at - 0\.7\),\n          \);/,');');
+writeFileSync('src/sections/Services.tsx',s);

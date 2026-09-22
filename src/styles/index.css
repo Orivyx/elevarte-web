@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-brand);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+}
+@custom-variant cinema-light (&:where(.cinema-light, .cinema-light *));
+@custom-variant short {
+  @media (min-width: 768px) and (max-height: 700px) {
+    @slot;
+  }
+}
+
+@layer base {
+  :root {
+    --font-brand: "Poppins", sans-serif;
+    --bg: #090b0b;
+    --ink: #eeeae1;
+    --accent: #00a99d;
+    --light: #45e8bf;
+    --composition-width: min(100vw, 1600px, 177.778svh);
+    --composition-height: min(100svh, 1000px);
+    --design-vw: min(1vw, 16px, 1.77778svh);
+    --frame-gutter: calc(4 * var(--design-vw));
+    --frame-edge: max(
+      var(--frame-gutter),
+      calc((100vw - var(--composition-width)) / 2 + var(--frame-gutter))
+    );
+    --contact-edge: max(
+      calc(5 * var(--design-vw)),
+      calc((100vw - var(--composition-width)) / 2 + 5 * var(--design-vw))
+    );
+    font-family: var(--font-brand);
+    color: var(--ink);
+    background: var(--bg);
+    font-synthesis: none;
+  }
+  html {
+    scrollbar-color: #34403d var(--bg);
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:focus-visible,
+  a:focus-visible {
+    outline: 1px solid var(--light);
+    outline-offset: 7px;
+  }
+  ::selection {
+    background: var(--accent);
+    color: white;
+  }
+  @media (max-width: 767px) {
+    :root {
+      --composition-width: 100vw;
+      --composition-height: 100svh;
+      --design-vw: 1vw;
+      --frame-gutter: 6vw;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition: none !important;
+    }
+  }
+}

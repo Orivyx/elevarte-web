@@ -1,0 +1,37 @@
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+import sharp from 'sharp';
+const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+const errors=[];
+for(const width of [1440,390]){
+ const page=await browser.newPage({viewport:{width,height:900}});
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:5173/?v=editorial-metal-01',{waitUntil:'networkidle'});
+ assert.equal(await page.locator('.cinema').getAttribute('data-design-version'),'editorial-metal-01');
+ await page.waitForFunction(()=>document.querySelector('.hero-sculpture')?.dataset.ready==='true');
+ await page.screenshot({path:'artifacts/qa-cinema/editorial-hero-'+width+'.png'});
+ const t=await page.evaluate(async()=>{const {ScrollTrigger}=await import('/src/animations/engine.ts');const t=ScrollTrigger.getById('cinema');return {start:t.start,end:t.end}});
+ const seek=async time=>{await page.evaluate(y=>scrollTo(0,y),t.start+(t.end-t.start)*time/28);await page.waitForTimeout(200)};
+ await seek(1.2);
+ const first=await page.locator('.hero-sculpture').getAttribute('data-frame-time');
+ await seek(2.4);
+ assert.notEqual(await page.locator('.hero-sculpture').getAttribute('data-frame-time'),first);
+ await seek(1.2);
+ assert.equal(await page.locator('.hero-sculpture').getAttribute('data-frame-time'),first);
+ await seek(4.6);
+ await page.screenshot({path:'artifacts/qa-cinema/editorial-project-'+width+'.png'});
+ await page.evaluate(()=>document.querySelector('#contato').scrollIntoView());
+ await page.waitForTimeout(200);
+ await page.screenshot({path:'artifacts/qa-cinema/editorial-contact-'+width+'.png'});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.waitForFunction(()=>document.querySelectorAll('.pin-spacer').length===0 && document.querySelectorAll('.hero-sculpture canvas').length===0);
+ await page.close();
+}
+await browser.close();
+assert.deepEqual(errors,[]);
+const files=['editorial-hero-1440','editorial-project-1440','editorial-contact-1440','editorial-hero-390'];
+const parts=[];
+for(let i=0;i<files.length;i++) parts.push({input:await sharp('artifacts/qa-cinema/'+files[i]+'.png').resize(600,375,{fit:'contain',background:'#070b0a'}).toBuffer(),left:i%2*600,top:Math.floor(i/2)*375});
+await sharp({create:{width:1200,height:750,channels:3,background:'#070b0a'}}).composite(parts).jpeg({quality:88}).toFile('artifacts/qa-cinema/editorial-review.jpg');
+console.log('Verified live design version, loaded metallic shader, scroll reversal, desktop/mobile layout and reduced-motion cleanup.');

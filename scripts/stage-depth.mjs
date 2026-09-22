@@ -1,0 +1,11 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+let s=readFileSync('src/sections/Cinema.tsx','utf8').replaceAll('\r\n','\n');
+s='import { DepthMedia } from "../components/DepthMedia";\n'+s;
+s=s.replace('<div className="c-nogueira">','<div className="c-nogueira">\n          <div className="c-n-outline" aria-hidden="true">NOGUEIRA</div>\n          <div className="c-n-companion" aria-hidden="true"><img src={projects[0].assets.identity} alt="" /></div>');
+s=s.replace('<figure className="c-n-cover c-surface">','<figure className="c-n-cover c-surface">\n            <DepthMedia src={projects[0].cover} />');
+s=s.replace('<h3>{title}</h3>','<h3>{title.split("\\n").map((line) => <span className="c-chapter-line" key={line}><b>{line}</b></span>)}</h3>');
+s=s.replace('<div className="c-aol-paper" />','<div className="c-aol-paper" />\n          <div className="c-aol-architecture" aria-hidden="true"><i /><i /><i /></div>');
+s=s.replace('AOL<span>ADVOGADOS</span>','<span className="c-aol-glyphs" aria-label="AOL">{"AOL".split("").map(letter => <b key={letter} aria-hidden="true">{letter}</b>)}</span><span className="c-aol-subtitle">ADVOGADOS</span>');
+s=s.replace('<div className="c-tatiana-bg" />','<div className="c-tatiana-bg" />\n          <span className="c-t-outline" aria-hidden="true">Sanchez.</span>\n          <div className="c-t-satellite" aria-hidden="true"><img src={projects[2].assets.digital} alt="" /></div>');
+s=s.replace('<figure className="c-t-cover c-surface">','<figure className="c-t-cover c-surface">\n            <DepthMedia src={projects[2].cover} />');
+writeFileSync('src/sections/Cinema.tsx',s);

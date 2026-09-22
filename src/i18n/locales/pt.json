@@ -1,0 +1,127 @@
+{
+  "nav": [
+    "Projetos",
+    "Estúdio",
+    "Serviços",
+    "Contato"
+  ],
+  "hero": [
+    "MARCAS QUE",
+    "ELEVAM"
+  ],
+  "explore": "SCROLL PARA EXPLORAR",
+  "studio": "ESTÚDIO INDEPENDENTE DE DESIGN",
+  "project": "PROJETOS SELECIONADOS",
+  "disciplines": [
+    "IDENTIDADE VISUAL",
+    "DIREÇÃO DE ARTE",
+    "EXPERIÊNCIA DIGITAL"
+  ],
+  "statement": [
+    "DESIGN MUDA",
+    "PERCEPÇÃO."
+  ],
+  "about": "Transformamos essência em presença. Conectamos estratégia, identidade e experiência para construir marcas com significado.",
+  "services": [
+    "IDENTIDADE",
+    "ESTRATÉGIA",
+    "DIGITAL",
+    "DIREÇÃO DE ARTE",
+    "POSICIONAMENTO"
+  ],
+  "contact": [
+    "VAMOS ELEVAR",
+    "SUA MARCA?"
+  ],
+  "start": "COMEÇAR UM PROJETO",
+  "back": "VOLTAR AO INÍCIO",
+  "common": {
+    "home": "Elevarte — início",
+    "skip": "Pular para conteúdo",
+    "main": "Principal",
+    "language": "Idioma",
+    "mobileMenu": "Menu mobile",
+    "menu": "MENU",
+    "close": "FECHAR",
+    "brandIdentity": "IDENTIDADE VISUAL",
+    "artDirection": "DIREÇÃO DE ARTE"
+  },
+  "cinema": {
+    "label": "Elevarte — exposição de projetos",
+    "kicker": "Estratégia para ir além.\nDesign para ser lembrado.",
+    "explore": "EXPLORAR PROJETOS",
+    "selected": "PROJETO SELECIONADO",
+    "study": "ESTUDO DE IDENTIDADE",
+    "visualStudy": "ESTUDO VISUAL",
+    "end": "DESIGN MUDA PERCEPÇÃO",
+    "index": "Índice de projetos",
+    "concept": "MOCKUPS CONCEITUAIS · DIREÇÃO VISUAL ELEVARTE"
+  },
+  "caseStudies": [
+    {
+      "sector": "Despachante",
+      "direction": "Feita para seguir em frente.",
+      "description": "Presença forte. Identidade direta. Uma marca feita para transmitir segurança.",
+      "coverAlt": "Mockup original dos cartões de visita Nogueira Despachante",
+      "detailAlt": "Mockup original de caneca preta com a marca Nogueira Despachante",
+      "colophon": "PRETO / VERMELHO / MOVIMENTO"
+    },
+    {
+      "sector": "Advogados",
+      "direction": "A força da clareza.",
+      "description": "Precisão em cada escolha. Uma identidade que traduz clareza e confiança.",
+      "coverAlt": "Papelaria AOL Advogados sobre volumes arquitetônicos",
+      "detailAlt": "",
+      "colophon": "FORMA / CONTRASTE / EQUILÍBRIO"
+    },
+    {
+      "sector": "Farmacêutica esteta",
+      "direction": "O cuidado ganha forma.",
+      "description": "Sensibilidade e precisão. Uma identidade pensada para o cuidado.",
+      "coverAlt": "Mockup original de cosmético da Dra. Tatiana Sanchez sobre tecido rosado",
+      "detailAlt": "Mockup original dos cartões de visita da Dra. Tatiana Sanchez",
+      "colophon": "TEXTURA / DELICADEZA / CUIDADO"
+    }
+  ],
+  "serviceDescriptions": [
+    "O que torna sua marca inconfundível.",
+    "Um ponto de vista. Uma direção.",
+    "Experiências que aproximam.",
+    "Uma visão em cada escolha.",
+    "Um lugar próprio no mundo."
+  ],
+  "film": {
+    "label": "Identidade Dra. Tatiana Sanchez — filme controlado pelo scroll",
+    "caption": "DRA. TATIANA SANCHEZ · IDENTIDADE EM MOVIMENTO"
+  },
+  "form": {
+    "intro": "Conte o que você imagina. Vamos construir o próximo passo da sua marca.",
+    "name": "Seu nome *",
+    "namePlaceholder": "Como podemos chamar você?",
+    "email": "E-mail *",
+    "emailPlaceholder": "voce@empresa.com",
+    "brand": "Marca ou empresa",
+    "brandPlaceholder": "O nome da sua marca, se já tiver",
+    "project": "Sobre o projeto *",
+    "projectPlaceholder": "O que sua marca precisa? Conte seus objetivos e o que você gostaria de criar.",
+    "note": "* Campos obrigatórios. O WhatsApp abrirá com sua mensagem pronta para você enviar.",
+    "submit": "CONTINUAR NO WHATSAPP",
+    "message": "Olá, Elevarte! Quero conversar sobre um projeto.\n\nNome: {{name}}\nE-mail: {{email}}\nMarca: {{brand}}\n\n{{project}}"
+  },
+  "testimonials": {
+    "label": "Depoimentos",
+    "title": "Na voz de quem confia.",
+    "preview": "Textos fictícios para avaliação do layout. Não representam relatos de clientes.",
+    "namePlaceholder": "Cliente de exemplo",
+    "rolePlaceholder": "Depoimento fictício",
+    "examples": [
+      "A Elevarte conseguiu traduzir o que queríamos transmitir. Hoje nossa marca tem uma identidade clara, e sentimos orgulho de apresentá-la em cada detalhe.",
+      "O processo trouxe clareza desde o início. Cada escolha fez sentido para o nosso negócio, e o resultado ficou consistente em todos os materiais."
+    ],
+    "carousel": "carrossel",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "pause": "Pausar",
+    "play": "Retomar"
+  }
+}

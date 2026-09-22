@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.sites-runtime/
+.env*
+!.env.example
+refs/
+artifacts/
+*.tsbuildinfo
+
+descarte/
+*.log
