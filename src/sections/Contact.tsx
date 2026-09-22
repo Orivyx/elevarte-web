@@ -101,6 +101,14 @@ export function Contact() {
           {t("back")}
         </button>
         </div>
+        <a
+          className="developer-credit mx-auto flex min-h-11 items-center text-[10px] text-[#97aa9d] transition-colors hover:text-[#71bca4] md:mx-0 md:min-h-0"
+          href="https://orivyx.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("common.developedBy")}
+        </a>
       </footer>
     </section>
   );

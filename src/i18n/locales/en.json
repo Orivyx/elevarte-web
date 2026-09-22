@@ -44,7 +44,8 @@
     "menu": "MENU",
     "close": "CLOSE",
     "brandIdentity": "BRAND IDENTITY",
-    "artDirection": "ART DIRECTION"
+    "artDirection": "ART DIRECTION",
+    "developedBy": "Developed by Orivyx"
   },
   "cinema": {
     "label": "Elevarte — project exhibition",
